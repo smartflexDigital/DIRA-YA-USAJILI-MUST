@@ -4,6 +4,7 @@ function lev(a,b){const m=[...Array(b.length+1).keys()];for(let i=1;i<=a.length;
 const hit=(t,k)=>t===k||(t.length>3&&k.length>3&&(t.includes(k)||(t.length>4&&k.includes(t))))?1:(t.length>4&&lev(t,k)<=1?.6:0);
 const f=n=>n.toLocaleString('en-US');
 const GEN=new Set('wapi lini nini vipi gani ngapi je chuo'.split(' '));
+const GEN2=new Set('iko kiko kipo ipo'.split(' '));
 let pend=null,name='',cnt=0,miss=null,quiet=false;
 try{name=sessionStorage.getItem('n')||''}catch(e){}
 function course(P){let b=null,s=0;for(const e of CS){const[n,g,k]=e.split('|'),w=k.split(';');if(w.every(x=>P.includes(x))){const l=w.join('').length;if(l>s){s=l;b=[n,g]}}}return b}
@@ -26,7 +27,7 @@ function core(text){
 const T=norm(text).filter(w=>w!=='kwanza'&&w!=='mwaka'),P=' '+T.join(' ')+' ',di=P.includes(' diploma '),cs=course(P);
 if(/mtwara|rukwa|kianda|sumbawanga|shangani|mccote|mrcc|finishing|wood technology|technical education in construction|civil engineering with technical/.test(P)){pend=null;return OC}
 let best=-1,sc=0;
-K.forEach((e,i)=>{const s=[...new Set(e[0].split(' '))].reduce((a,k)=>a+Math.max(0,...T.map(t=>hit(t,k)))*(GEN.has(k)?.3:1),0);if(s>sc){sc=s;best=i}});
+K.forEach((e,i)=>{const s=[...new Set(e[0].split(' '))].reduce((a,k)=>a+Math.max(0,...T.map(t=>hit(t,k)))*(GEN.has(k)?.3:GEN2.has(k)?.5:1),0);if(s>sc){sc=s;best=i}});
 if(sc<1)best=-1;
 if(/bweni|hostel|malazi|accommodation/.test(P)&&/ ada | fee |bei|gharama|ngapi|shilingi|lipi|kiasi|cost|price/.test(P)){pend=null;return ACC}
 const gv=/serikali|government|govt/.test(P),pv=/binafsi|private/.test(P),dgm=dipGroup(P);
