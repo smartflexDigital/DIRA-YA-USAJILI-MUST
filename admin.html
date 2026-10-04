@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="sw">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Admin | Msaidizi wa MUST</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<main id="login">
+  <h1>Admin 🔐</h1>
+  <p id="msg">Ingia ili kuona maswali na maoni ya wanafunzi.</p>
+  <form id="lf"><input id="em" type="email" placeholder="Barua pepe" required autocomplete="username"><input id="pw" type="password" placeholder="Nenosiri" required autocomplete="current-password"><button>Ingia</button></form>
+</main>
+<main id="app" hidden>
+  <header><h1>Dashibodi ya Msaidizi 📊</h1><button id="out" class="ghost">Toka</button></header>
+  <section id="stats"></section>
+  <nav id="tabs"></nav>
+  <section id="form" hidden></section>
+  <section id="list"></section>
+</main>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
