@@ -26,7 +26,7 @@ const CS=[
 const DIP="💰 <b>Diploma (udhamini wa Serikali), mwaka wa kwanza:</b> jumla <b>TZS 320,400</b>. Serikali inagharamia ada ya masomo, malazi, chakula na mafunzo kwa vitendo.<br>Mchanganuo: caution 20,000; malazi 20,000; maktaba 30,000; mitihani 50,000; cheti 40,000; MUSTSO 10,000; usajili 10,000; kitambulisho 10,000; NHIF 50,400; capitation 10,000; TCU 20,000; joho 40,000; transcript 10,000.";
 const ASKFEE="💰 Ada hutegemea kozi na kiwango chako. Unasoma <b>Bachelor</b> (niambie jina la kozi, mfano Software Engineering au Business Administration) au <b>Diploma</b>?";
 const NOCOURSE="🤔 Sijaitambua kozi hiyo. Andika jina la kozi kama lilivyo kwenye barua yako ya joining instructions, mfano <i>Computer Science</i>, au andika <i>diploma</i>.";
-const FALL="Sijapata jibu la swali hilo kwenye taarifa nilizonazo. Jaribu kuuliza kwa maneno mengine, au wasiliana na chuo: 📞 +255 (0)25 2957541, ✉️ dvcarc@must.ac.tz.";
+const FALL="Sijapata jibu la swali hilo kwenye taarifa nilizonazo. Unaweza kuuliza tena kwa maneno mengine, au wasiliana nami moja kwa moja: 📱 <a href=\"https://wa.me/255612626715?text=Habari%2C%20nimekwama%20kwenye%20chatbot\" target=\"_blank\" rel=\"noopener noreferrer\">WhatsApp +255 612 626 715</a> | <a href=\"tel:+255612626715\">Piga simu</a>.";
 /* K[0] ni ada (inashughulikiwa na script.js). Kila kipengele: [maneno muhimu, jibu] */
 const K=[
 ["ada fee fees kiasi bei jumla tuition",null],
@@ -57,7 +57,7 @@ const K=[
 ["sims portal akaunti login nenosiri mfumo","💻 Chuo kina mfumo wa taarifa za wanafunzi (SIMS): sims.must.ac.tz. Ukihitaji msaada wa kuingia, wasiliana na chuo."],
 ["pakua download pakuwa mwongozo guide bylaw bylaws","📥 Kwenye Download center ya www.must.ac.tz kuna joining instructions za 2026/2027 (Bachelor, Diploma binafsi, Diploma ya Serikali), mwongozo wa mavazi, Students By-Law, Students Guide na Off-Campus Form."],
 ["asante shukrani thank ahsante","Karibu sana! 😊 Uliza chochote kingine kuhusu usajili."],
-["habari hujambo mambo vipi vp niaje poa hi hello salaam shikamoo hey","Karibu! 👋 Niulize chochote kuhusu usajili, ada, nyaraka au malazi."]
+["habari habare yako za leo huku kwenu hujambo hamjambo mambo vipi vp niaje poa kwema hali salama shikamoo marahaba salaam assalamu asalaam assalaam alaikum aleikum waalaikum walaikum hi hello hey good morning good afternoon good evening good night za asubuhi za mchana za jioni usiku mwema mchana mwema jioni njema asubuhi njema","Karibu! 👋 Niulize chochote kuhusu usajili, ada, nyaraka au malazi."]
 ];
 const ACC="🏠 Ada ya malazi ya hosteli ni <b>TZS 107,100</b> kwa mwaka kwa Bachelor (Diploma wa Serikali: TZS 20,000). Imo kwenye jumla ya ada ya kuishi chuoni. Ukiishi nje ya chuo hulipi ada hii.";
 const WEAK="<br><small>Kama hili halijajibu swali lako, uliza kwa maneno mengine au wasiliana na chuo: dvcarc@must.ac.tz</small>";

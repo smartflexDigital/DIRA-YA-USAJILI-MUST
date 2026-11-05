@@ -25,6 +25,8 @@ if(!g){pend='dip';return ASKDG}
 pend=null;dg=null;sp=null;return dipFee(g)}
 function core(text){
 const T=norm(text).filter(w=>w!=='kwanza'&&w!=='mwaka'),P=' '+T.join(' ')+' ',di=P.includes(' diploma '),cs=course(P);
+const saluteWords=new Set('habari habare yako za leo huku kwenu hujambo hamjambo mambo vipi vp niaje poa kwema hali salama shikamoo marahaba salaam assalamu asalaam alaikum aleikum waalaikum walaikum wa hi hello hey good morning afternoon evening night asubuhi mchana jioni usiku mwema njema gani'.split(' '));
+if(T.length&&T.length<=5&&T.every(w=>saluteWords.has(w))&&T.some(w=>'habari habare hujambo hamjambo mambo vipi vp niaje poa kwema hali salama shikamoo marahaba salaam assalamu asalaam hi hello hey good morning asubuhi mchana jioni usiku'.split(' ').includes(w))){pend=null;return 'Salama kabisa, asante 😊 Karibu! Uliza kuhusu ada, kozi, nyaraka, usajili, malazi au jambo lingine la MUST.'}
 if(/mtwara|rukwa|kianda|sumbawanga|shangani|mccote|mrcc|finishing|wood technology|technical education in construction|civil engineering with technical/.test(P)){pend=null;return OC}
 let best=-1,sc=0;
 K.forEach((e,i)=>{const s=[...new Set(e[0].split(' '))].reduce((a,k)=>a+Math.max(0,...T.map(t=>hit(t,k)))*(GEN.has(k)?.3:GEN2.has(k)?.5:1),0);if(s>sc){sc=s;best=i}});
