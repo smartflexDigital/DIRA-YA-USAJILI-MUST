@@ -50,7 +50,13 @@ let r=core(text);
 if(name&&r===FALL)r=`Samahani ${name} 🙏 `+r;else if(name&&cnt++%3===0)r=`Sawa ${name}! `+r;
 return r}
 const esc=t=>String(t).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'})[c]).replace(/\n/g,'<br>');
-function addCustom(items){K.splice(1,0,...items.map(i=>[norm(i.k).join(' '),esc(i.a)]))}
+let customCount=0;
+function addCustom(items){
+  if(customCount)K.splice(1,customCount);
+  const rows=items.map(i=>[norm(i.k).join(' '),esc(i.a)]).filter(i=>i[0]&&i[1]);
+  K.splice(1,0,...rows);customCount=rows.length;
+}
+globalThis.setCustomAnswers=addCustom;
 const clean=t=>t.replace(NS,' ').replace(/\d{5,}/g,' ').trim();
 function addVote(w,q,r){const v=document.createElement('div');v.className='vote';
 v.innerHTML='<span>Jibu hili limekusaidia?</span><button data-v="up" aria-label="Ndiyo">👍</button><button data-v="down" aria-label="Hapana">👎</button>';

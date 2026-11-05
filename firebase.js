@@ -1,5 +1,5 @@
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
-import {getFirestore,doc,getDoc,setDoc,increment,serverTimestamp} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+import {getFirestore,doc,getDoc,setDoc,increment,serverTimestamp,onSnapshot} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 import {CFG} from './firebase-config.js';
 /* Bila config, chatbot inafanya kazi kawaida bila kuhifadhi maoni wala maswali */
 if(!CFG.apiKey.startsWith('PASTE')){
@@ -13,5 +13,12 @@ vote(q,a,v){const k=key(q);if(!k)return;setDoc(doc(db,'feedback','f'+hash(k)),{q
 try{const c=JSON.parse(localStorage.getItem('ca')||'null');let items;
 if(c&&Date.now()-c.t<18e5)items=c.items;
 else{const s=await getDoc(doc(db,'config','customAnswers'));items=s.exists()?s.data().items||[]:[];localStorage.setItem('ca',JSON.stringify({t:Date.now(),items}))}
-addCustom(items)}catch(e){}
+globalThis.setCustomAnswers(items);
+// Keep every open chatbot tab synchronized with admin edits in Firestore.
+onSnapshot(doc(db,'config','customAnswers'),s=>{
+  const latest=s.exists()?s.data().items||[]:[];
+  localStorage.setItem('ca',JSON.stringify({t:Date.now(),items:latest}));
+  globalThis.setCustomAnswers(latest);
+},e=>console.error('Imeshindikana kusawazisha majibu mapya:',e));
+}catch(e){console.error('Imeshindikana kupakia majibu maalum:',e)}
 }
