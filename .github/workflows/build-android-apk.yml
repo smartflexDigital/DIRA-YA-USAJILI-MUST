@@ -1,0 +1,37 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - MUST-android-app.zip
+      - .github/workflows/build-android-apk.yml
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+      - name: Install Android SDK packages
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Build signed APK
+        run: |
+          mkdir android-app
+          unzip MUST-android-app.zip -d android-app
+          cd android-app
+          bash build.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Msaidizi-wa-MUST-APK
+          path: android-app/dist/Msaidizi-MUST.apk
+          if-no-files-found: error
+          retention-days: 14
