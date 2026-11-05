@@ -26,7 +26,7 @@ const CS=[
 const DIP="💰 <b>Diploma (udhamini wa Serikali), mwaka wa kwanza:</b> jumla <b>TZS 320,400</b>. Serikali inagharamia ada ya masomo, malazi, chakula na mafunzo kwa vitendo.<br>Mchanganuo: caution 20,000; malazi 20,000; maktaba 30,000; mitihani 50,000; cheti 40,000; MUSTSO 10,000; usajili 10,000; kitambulisho 10,000; NHIF 50,400; capitation 10,000; TCU 20,000; joho 40,000; transcript 10,000.";
 const ASKFEE="💰 Ada hutegemea kozi na kiwango chako. Unasoma <b>Bachelor</b> (niambie jina la kozi, mfano Software Engineering au Business Administration) au <b>Diploma</b>?";
 const NOCOURSE="🤔 Sijaitambua kozi hiyo. Andika jina la kozi kama lilivyo kwenye barua yako ya joining instructions, mfano <i>Computer Science</i>, au andika <i>diploma</i>.";
-const FALL="Sijapata jibu la swali hilo kwenye taarifa nilizonazo. Unaweza kuuliza tena kwa maneno mengine, au wasiliana nami moja kwa moja: 📱 <a href=\"https://wa.me/255612626715?text=Habari%2C%20nimekwama%20kwenye%20chatbot\" target=\"_blank\" rel=\"noopener noreferrer\">WhatsApp +255 612 626 715</a> | <a href=\"tel:+255612626715\">Piga simu</a>.";
+const FALL="Samahani, sina taarifa ya kutosha kujibu swali hili. Kwa msaada zaidi, wasiliana na Msaidizi wa Usajili kupitia: <a href=\"https://wa.me/255612626715?text=Habari%2C%20nimekwama%20kwenye%20chatbot\" target=\"_blank\" rel=\"noopener noreferrer\">WhatsApp</a> au <a href=\"tel:+255612626715\">Piga simu</a>.";
 /* K[0] ni ada (inashughulikiwa na script.js). Kila kipengele: [maneno muhimu, jibu] */
 const K=[
 ["ada fee fees kiasi bei jumla tuition",null],
